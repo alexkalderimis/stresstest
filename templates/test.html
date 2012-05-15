@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            // Load the Visualization API and the core charting package.
+            google.load('visualization', '1.0', {'packages':['corechart']});
+            var url = "{{ url_for('get_results', mine = mine)}}";
+            google.setOnLoadCallback(function() {drawCharts(url)});
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='stresstest.js') }}">
+        </script>
+    </head>
+
+    <body>
+        <h1>Stress Test Results</h1>
+        <div id="visualization"></div>
+    </body>
+
+    <style type="text/css">
+    </style>
+
+</html>
+
